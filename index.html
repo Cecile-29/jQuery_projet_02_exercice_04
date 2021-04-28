@@ -33,19 +33,31 @@
   <script src="https://code.jquery.com/jquery-3.6.0.js">
   </script>
   <script>
+    // $(document).ready(function() {
+    //   //La méthode click() permet de gérer l'événement avec un click du bouton dont l'ID de sa div est '#green'
+    //   $('#green').click(function() {
+    //     // on applique ici la méthode .addClass() pour ajouter la class green du css au click
+    //     $('#texte').css('color', 'green');
+    //   });
+    //   $('#red').click(function() {
+    //     // on applique ici la méthode .addClass() pour ajouter la class green du css au click
+    //     $('#texte').css('color', 'red');
+    //   });
+    //   $('#blue').click(function() {
+    //     // on applique ici la méthode .addClass() pour ajouter la class green du css au click
+    //     $('#texte').css('color', 'blue');
+    //   });
+    // });
+    //******************** CORRECTION OLGA ****************************
     $(document).ready(function() {
-      //La méthode click() permet de gérer l'événement avec un click du bouton dont l'ID de sa div est '#green'
-      $('#green').click(function() {
-        // on applique ici la méthode .addClass() pour ajouter la class green du css au click
-        $('#texte').addClass('green');
-      });
-      $('#red').click(function() {
-        // on applique ici la méthode .addClass() pour ajouter la class green du css au click
-        $('#texte').addClass('red');
-      });
-      $('#blue').click(function() {
-        // on applique ici la méthode .addClass() pour ajouter la class green du css au click
-        $('#texte').addClass('blue');
+      // au click on séléctionne la classe ".color"
+      $('.color').click(function() {
+        // on crée une variable et on ajoute un attribut id à notre objet ".color", les id correspondents aux couleurs souhaitées pour la couleur du texte en css
+        //la méthode attr()  va renvoyer la valeur de l'élément qu'on passe en paramètre
+        var id = $(this).attr('id');
+        // au click on séléctionne notre texte et on lui applique la couleur correspondante à l'id de l'objet cliqué
+        // on applique la valeur de notre id à la classe css de la div #texte
+        $('#texte').css('color', id);
       });
     });
   </script>
